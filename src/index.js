@@ -6,12 +6,10 @@ import debounce from 'lodash.debounce';
 const DEBOUNCE_DELAY = 300;
 
 const refs = {
-    searchFormEl: document.querySelector("input#search-box"),
-    countryListEl: document.querySelector(".country-list"),
-    countryInfoEl: document.querySelector(".country-info"),
-
-}
-
+  searchFormEl: document.querySelector('input#search-box'),
+  countryListEl: document.querySelector('.country-list'),
+  countryInfoEl: document.querySelector('.country-info'),
+};
 
 refs.searchFormEl.addEventListener(
   'input',
@@ -21,7 +19,7 @@ refs.searchFormEl.addEventListener(
 function onSearchFormCountry(event) {
   event.preventDefault();
 
-  searchedNameCountry = event.target.value.trim();
+  let searchedNameCountry = event.target.value.trim();
 
   if (searchedNameCountry === '') {
     clearMarkup();
@@ -90,6 +88,3 @@ function clearMarkup() {
   refs.countryInfoEl.innerHTML = '';
   refs.countryListEl.innerHTML = '';
 }
-
-
-
